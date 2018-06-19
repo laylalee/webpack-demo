@@ -1,54 +1,44 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./css/common.css";
+import {
+    Link,
+    Router,
+    Route,
+    browserHistory, // 使用时，将Router的history的值修改为browserHistory即可
+    useRouterHistory
+} from 'react-router';
+import { createHashHistory } from "history";
+import Contact from './Contact';
+import Courses from './Courses';
+const history = useRouterHistory(createHashHistory)({ queryKey: false });
 
 const app = document.querySelector('#app');
 
-class NameForm extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = { inputVal: '', selectVal: '' };
-        this.handleChange = this.handleChange.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
-    }
-
-    handleChange(event) {
-        const target = event.target;
-        const value = target.type === 'select' ? target.select : target.value;
-        const name = target.name;
-        this.setState({
-            [name]: value
-        });
-
-    }
-
-
-    handleSubmit(event) {
-        alert('提交的数据: ' + this.state.inputVal + this.state.selectVal);
-        event.preventDefault();
-    }
-
+class Nav extends React.Component{
     render() {
-        return (
-            <form onSubmit={this.handleSubmit}>
-                <section>
-                    <label>
-                        姓名:<textarea name='inputVal' value={this.state.inputVal} onChange={this.handleChange} />
-                    </label>
-                </section>
-                <section>
-                    <label>
-                        选择你喜欢ds的w: <select name="selectVal" value={this.state.selectVal} onChange={this.handleChange}>
-                            <option value="grapefruit">Grapefruit</option>
-                            <option value="lime">Lime</option>
-                            <option value="coconut">Coconut</option>
-                            <option value="mango">Mango</option>
-                        </select>
-                    </label>
-                </section>
-
-                <input type="submit" value="确定" />
-            </form>
+        return(
+            <div className='container'>
+                <ul className='nav'>
+                    <li>
+                        <Link to="/courses">Courses</Link>
+                    </li>
+                    <li>
+                        <Link to="/contact">Contact</Link>
+                    </li>             
+                </ul> 
+            </div>
+         
+        )
+    }
+}
+class linkDemo extends React.Component{
+    render(){
+        return(
+            <div>
+                <Nav />
+                {this.props.children}
+            </div>
         );
     }
 }
@@ -59,10 +49,13 @@ class App extends React.Component {
     }
     render() {
         return (<div className="container">
-            <section className="jumbotron">
-                <h3>表单</h3>
-                <NameForm />
-            </section>
+            <Router history={history}>
+            <Route path="/" component={linkDemo}>
+                <Route path="contact" component={Contact} />
+                <Route path="courses" component={Courses} />
+             </Route>
+           </Router>
+
         </div>)
     }
 }

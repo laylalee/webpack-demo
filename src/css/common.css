@@ -66,3 +66,16 @@ body {
     font-size: 22px;
     line-height: 1;
   }
+  .nav{
+    text-align: right;
+  }
+  .nav li{
+     list-style: none;
+     display: inline-block;
+     padding: 20px;
+
+  }
+.list{
+  width: 800px;
+  margin: 50px auto;
+}
