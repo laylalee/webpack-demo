@@ -7,7 +7,8 @@
    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "cross-env NODE_ENV=development node server",
     "start:ie8": "cross-env NODE_ENV=production node server",
-    "build": "cross-env NODE_ENV=production webpack --config webpack/webpack.prod.config.js"
+    "build": "cross-env NODE_ENV=production webpack --config webpack/webpack.prod.config.js",
+    "start:BTD": "cross-env FOLDER=BaseTodo npm start"
   },
   "author": "",
   "license": "ISC",

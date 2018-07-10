@@ -1,81 +1,202 @@
 body {
-    font: 14px "Century Gothic", Futura, sans-serif;
-    margin: 20px;
-    color: #222222;
-  }
-  
-  ol, ul {
-    padding-left: 30px;
-  }
-  label span{
-    display: inline-block;
-    min-width: 100px;
-    vertical-align: top;
-  }
-  .jumbotron{
-    width: 500px;
-    margin: 50px auto;
-    border: 1px solid #ddd;
-    padding: 40px;
-  }
-  section{
-    margin-bottom: 20px;
-  }
-  .board-row:after {
-    clear: both;
-    content: "";
-    display: table;
-  }
-  
-  .status {
-    margin-bottom: 10px;
-  }
-  
-  .square {
-    background: #fff;
-    border: 1px solid #999;
-    float: left;
-    font-size: 24px;
-    font-weight: bold;
-    line-height: 34px;
-    height: 34px;
-    margin-right: -1px;
-    margin-top: -1px;
-    padding: 0;
-    text-align: center;
-    width: 34px;
-  }
-  
-  .square:focus {
-    outline: none;
-  }
-  
-  .kbd-navigation .square:focus {
-    background: #ddd;
-  }
-  
-  .game {
-    display: flex;
-    flex-direction: row;
-  }
-  
-  .game-info {
-    margin-left: 20px;
-  }
-  h3{
-    font-size: 22px;
-    line-height: 1;
-  }
-  .nav{
-    text-align: right;
-  }
-  .nav li{
-     list-style: none;
-     display: inline-block;
-     padding: 20px;
+  font: 14px "Century Gothic", Futura, sans-serif;
+  margin: 20px;
+  color: #222222;
+}
 
-  }
-.list{
+ol,
+ul {
+  padding-left: 30px;
+}
+
+label span {
+  display: inline-block;
+  min-width: 100px;
+  vertical-align: top;
+}
+
+.jumbotron {
+  width: 500px;
+  margin: 50px auto;
+  border: 1px solid #ddd;
+  padding: 40px;
+}
+
+section {
+  margin-bottom: 20px;
+}
+
+.board-row:after {
+  clear: both;
+  content: "";
+  display: table;
+}
+
+.status {
+  margin-bottom: 10px;
+}
+
+.square {
+  background: #fff;
+  border: 1px solid #999;
+  float: left;
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 34px;
+  height: 34px;
+  margin-right: -1px;
+  margin-top: -1px;
+  padding: 0;
+  text-align: center;
+  width: 34px;
+}
+
+.square:focus {
+  outline: none;
+}
+
+.kbd-navigation .square:focus {
+  background: #ddd;
+}
+
+.game {
+  display: flex;
+  flex-direction: row;
+}
+
+.game-info {
+  margin-left: 20px;
+}
+
+h3 {
+  font-size: 22px;
+  line-height: 1;
+}
+
+.nav {
+  text-align: right;
+}
+
+.nav li {
+  list-style: none;
+  display: inline-block;
+  padding: 20px;
+}
+
+.list {
   width: 800px;
   margin: 50px auto;
+}
+
+.wrapper {
+  width: 500px;
+  margin: 10px auto;
+  font-size: 14px;
+  background-color: #fff;
+  border: 1px solid #f1f1f1;
+  padding: 20px;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background-color: #fbfbfb;
+}
+
+.wrapper {
+  width: 500px;
+  margin: 10px auto;
+  font-size: 14px;
+  background-color: #fff;
+  border: 1px solid #f1f1f1;
+  padding: 20px;
+}
+
+/* 评论框样式 */
+.comment-input {
+  background-color: #fff;
+  border: 1px solid #f1f1f1;
+  padding: 20px;
+  margin-bottom: 10px;
+}
+
+.comment-field {
+  margin-bottom: 15px;
+  display: flex;
+}
+
+.comment-field .comment-field-name {
+  display: flex;
+  flex-basis: 100px;
+  font-size: 14px;
+}
+
+.comment-field .comment-field-input {
+  display: flex;
+  flex: 1;
+}
+
+.comment-field-input input,
+.comment-field-input textarea {
+  border: 1px solid #e6e6e6;
+  border-radius: 3px;
+  padding: 5px;
+  outline: none;
+  font-size: 14px;
+  resize: none;
+  flex: 1;
+}
+
+.comment-field-input textarea {
+  height: 100px;
+}
+
+.comment-field-button {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.comment-field-button button {
+  padding: 5px 10px;
+  width: 80px;
+  border: none;
+  border-radius: 3px;
+  background-color: #00a3cf;
+  color: #fff;
+  outline: none;
+  cursor: pointer;
+}
+
+.comment-field-button button:active {
+  background: #13c1f1;
+}
+
+/* 评论列表样式 */
+.comment-list {
+  background-color: #fff;
+  border: 1px solid #f1f1f1;
+  padding: 20px;
+}
+
+/* 评论组件样式 */
+.comment {
+  display: flex;
+  border-bottom: 1px solid #f1f1f1;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  min-height: 50px;
+}
+
+.comment .comment-user {
+  flex-shrink: 0;
+}
+
+.comment span {
+  color: #00a3cf;
+  font-style: italic;
+}
+
+.comment p {
+  margin: 0;
+  /*text-indent: 2em;*/
 }

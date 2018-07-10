@@ -11,6 +11,7 @@ import {
 import { createHashHistory } from "history";
 import Contact from './Contact';
 import Courses from './Courses';
+import CommentApp from './example/commentDemo/CommentApp';
 const history = useRouterHistory(createHashHistory)({ queryKey: false });
 
 const app = document.querySelector('#app');
@@ -55,6 +56,7 @@ class App extends React.Component {
                 <Route path="courses" component={Courses} />
              </Route>
            </Router>
+           <CommentApp />
 
         </div>)
     }
