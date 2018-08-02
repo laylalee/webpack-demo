@@ -2,6 +2,7 @@
   "presets": [
     "react",
     "stage-0"
+
   ],
   "env": {
     "development": {
@@ -12,6 +13,9 @@
             "modules": false
           }
         ]
+      ],
+      "plugins": [
+        "transform-class-properties" 
       ]
     },
     "production": {

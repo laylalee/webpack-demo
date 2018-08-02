@@ -1,14 +1,19 @@
-import React, { Component } from 'react'
+import React, { Component,PropTypes } from 'react'
 import Comment from './Comment'
 
 export default class CommentList  extends Component {
-  
+    static propTypes = {
+        comments: PropTypes.array,
+        onDeleteComment: PropTypes.func
+    }
+    static defaultProps = {
+        comments: []
+    }
     constructor() {
         super();
         
     }
     
-
     handleDeleteComment(index){
         if (this.props.onDeleteComment) {
             this.props.onDeleteComment(index)

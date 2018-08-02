@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 
 export default class Comment extends Component {
     constructor(props) {
         super(props);
         this.state={
-            timesString:''
+            timeString:''
         }
     }
     
@@ -23,14 +23,12 @@ export default class Comment extends Component {
             ? `${Math.round(duration / 60)} 分钟前`
             : `${Math.round(Math.max(duration, 1))} 秒前`
         })
-        
     }
     handleDeleteComment(){
         if (this.props.onDeleteComment) {
             this.props.onDeleteComment(this.props.index)
           }
     }
-    
     componentWillUnmount() {
         clearInterval(this._timer);
     }
@@ -45,17 +43,14 @@ export default class Comment extends Component {
       }
     
     render() {
+        const comment = this.props.comment
         return (
             <div className='comment'>
-                <div className='comment-user'>
-                <span>{this.props.comment.username} </span>：
-                </div>
+                <div className='comment-user'><span>{comment.username}</span>:</div>
                 <p dangerouslySetInnerHTML={{
                     __html: this._getProcessedContent(this.props.comment.content)
-                  }} />
-                <span className='comment-createdtime'>
-                {this.state.timeString}
-                </span>
+                  }}/>
+                <span className='comment-createdtime'> {this.state.timeString}</span>
                 <span 
                 onClick={this.handleDeleteComment.bind(this)}
                 className='comment-delete'>
